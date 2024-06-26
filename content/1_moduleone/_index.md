@@ -7,7 +7,7 @@ weight: 1
 
 ## Learning Objectives
 
-Upon Azure Azure Azure BM completion of this workshop, you will gain understanding of the following objectives:
+Upon Azure updates here blah blah blah completion of this workshop, you will gain understanding of the following objectives:
   
   * AWS Networking Concepts *(10 minutes)*
   * AWS Common Architecture Patterns *(10 minutes)*
