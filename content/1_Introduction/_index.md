@@ -36,3 +36,5 @@ Fortinet & Azure components used during this workshop:
 
 ![](Images/Azure-Unsecured-VNET.png)
 ![](Images/Azure-Secured-VNET.PNG)
+
+Updates made.
