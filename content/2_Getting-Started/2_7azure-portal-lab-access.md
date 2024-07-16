@@ -1,6 +1,6 @@
 ---
 title: "Azure Portal - Lab Access"
-weight: 3
+weight: 7
 ---
 
 ### Lab Environment

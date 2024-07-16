@@ -1,6 +1,6 @@
 ---
 title: "Workshop Logistics"
-weight: 2
+weight: 5
 ---
 
 

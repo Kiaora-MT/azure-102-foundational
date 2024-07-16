@@ -1,6 +1,6 @@
 ---
 title: "Azure Networking Concepts"
-weight: 1
+weight: 2
 ---
 
 ![](../Images/Azure-VNET-Basic.PNG)
@@ -11,7 +11,7 @@ weight: 1
   - You can connect virtual networks to each other by using **virtual peering**. The resources in either virtual network can then communicate with each other. The virtual networks that you connect can be in the same, or different, Azure regions.
   - You can connect your on-premises computers and networks to a virtual network by using any of the following options:
     - **Point-to-site virtual private network (VPN):** Established between a virtual network and a single computer in your network. Each computer that wants to establish connectivity with a virtual network must configure its connection. This connection type is useful if you're just getting started with Azure, or for developers, because it requires few or no changes to an existing network. The communication between your computer and a virtual network is sent through an encrypted tunnel over the internet.
-    - **Site-to-site VPN:**Established between your on-premises VPN device and an Azure VPN gateway that's deployed in a virtual network. This connection type enables any on-premises resource that you authorize to access a virtual network. The communication between your on-premises VPN device and an Azure VPN gateway is sent through an encrypted tunnel over the internet.
+    - **Site-to-site VPN:** Established between your on-premises VPN device and an Azure VPN gateway that's deployed in a virtual network. This connection type enables any on-premises resource that you authorize to access a virtual network. The communication between your on-premises VPN device and an Azure VPN gateway is sent through an encrypted tunnel over the internet.
     - **Azure ExpressRoute:** Established between your network and Azure, through an ExpressRoute partner. This connection is private. Traffic doesn't go over the internet.
   - You can filter network traffic between subnets by using either or both of the following options:
     - **Network security groups:** Network security groups and application security groups can contain multiple inbound and outbound security rules. These rules enable you to filter traffic to and from resources by source and destination IP address, port, and protocol.
