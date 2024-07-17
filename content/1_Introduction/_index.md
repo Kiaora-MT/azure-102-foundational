@@ -8,11 +8,12 @@ weight: 5
 ## Learning Objectives
 
 Upon completion of this workshop, you will gain understanding of the following objectives:
-  * Azure Networking Concepts
-  * Azure Architecture Concepts
-  * FortiGate FortiOS terminology
-  * Creating & applying Firewall policies with security profiles & objects to control traffic flows
-  * Testing traffic flows to validate the implemented networking and security controls
+  * Azure Services Overview
+  * Azure Network Concepts
+  * FortiGate-VM support for Azure
+  * Create an Azure unsecured VNET
+  * Deploy a FortiGate-VM to create an Azure secured VNET
+  * Configure FortiGate firewall policies to control access to/from the Internet
 
 <!--
 ## Workshop Components
