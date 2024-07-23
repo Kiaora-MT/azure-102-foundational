@@ -14,9 +14,9 @@ weight: 7
   - https://portal.azure.com
 
 
-- 2. Use the credentials shared with you by your instructors. If you didn’t find it, try looking at your junk mail too.  Look for an email with a subject of: MIS - Xperts Summit - Public Cloud Track - AZURE LAB Credentials
-  - Username:  user@domain received in email
-  - Password:  password provided in email
+- 2. Use the credentials shared with you by your instructors. 
+  - **Username**:  "**studentxx@fortinetcloud.onmicrosoft.com**"
+  - **Password**:  "**FortinetAzure2024!**"
 
 
 - 3. Click **Log in**.
