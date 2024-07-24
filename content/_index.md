@@ -1,10 +1,10 @@
 ---
-title: "Securing Acme Corp's AWS Traffic Flows with FortiGate NGFW"
+title: "Securing ABC Corp's Azure VNET with FortiGate NGFW"
 weight: 1
 archetype: home
 ---
 
-## Acme Corp is migrating on prem apps/workloads to AWS Public cloud
+## ABC Corp is migrating on prem apps/workloads to Azure Public cloud
 
 - 3 tier web apps (Front end, middleware, database)
 
