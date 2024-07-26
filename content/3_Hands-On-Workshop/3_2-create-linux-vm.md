@@ -34,7 +34,7 @@ You will be redirected to the **Create a virtual machine** template.
     - On the **Select a VM size** screen, expand the **D-Series v5** section and select "**D2as_v5**" and then click **Select**.
 ![](../Images/Azure-create-linux-vm-9.PNG)
     
-    - Continuing from the **Create a virtual machine** screen,
+    Continuing from the **Create a virtual machine** screen,
     - **Authentication type**:  "**Password**"
     - **Username**:  "**studentxx**"  (Replace xx with your student number)
     - **Password**:  "**FortinetAzure2024!**" (Same as your Azure portal login)
