@@ -1,5 +1,5 @@
 ---
-title: "Task 2 - Creating Linux Virtual Machines in Azure"
+title: "Task 2 - Create Linux VMs"
 weight: 2
 ---
 

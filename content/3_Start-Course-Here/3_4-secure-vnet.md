@@ -1,6 +1,6 @@
 ---
-title: "Task 1 - Creating a Virtual Network in Azure"
-weight: 1
+title: "Task 4 - Securing the VNET"
+weight: 4
 ---
 
 
