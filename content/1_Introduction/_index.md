@@ -1,5 +1,5 @@
 ---
-title: "Securing Azure Virtual Networks with FortiGate NVAs"
+title: "Chapter 1: Securing Azure Virtual Networks with FortiGate NVAs"
 weight: 5
 ---
 
