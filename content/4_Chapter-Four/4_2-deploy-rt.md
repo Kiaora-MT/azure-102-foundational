@@ -1,5 +1,5 @@
 ---
-title: "Task 2:  Deploy a Route Table"
+title: "Task 2:  Deploy a Route Table and Create a UDR"
 weight: 4
 ---
 
@@ -7,68 +7,72 @@ weight: 4
 
 
 
-Our first step is going to be the creation of a new VNET (Virtual Network) in the training Resource Group that you have been assigned.
-- **Creation Steps**
-    - 1. Navigate into your Resource Group and click on the **+ Create** located at the top left of the tool bar.
+In Task Two, you will deploy a **Route Table** and modify the **Route Table** by associating both protected subnnets to use **port2** of the FortiGate as the default route. This is what is called a **User Defined Route (UDR)**.
+
+- 1. Navigate into your Resource Group and click on the **+ Create** located at the top left of the tool bar.
 ![](../Images/Azure-creating-vnet.PNG)  
 
 You will be redirected to the Azure Marketplace.
 
-In the Marketplace search bar, enter **Virtual Network** and then enter.  Navigate to the **Virtual Network** offering from Microsoft and select **Create** and **Virtual network**.
-![](../Images/Azure-creating-vnet-1.PNG)
+- 2. In the Marketplace search bar, enter **route table** and then enter.  Navigate to the **Route table** offering from Microsoft and select **Create** and **Route table**.
+![](../Images/4-2-Azure-deploy-rt-1.PNG)
 
 
-You will be redirected to the **Create virtual network** template.
+You will be redirected to the **Create Route table** template.
 
-- Under the **Basics** tab, the **Subscription** and **Resource Groups** should already be filled in with your assigned info.  If not, see the screen shot below for details.
-- Under **Instance details**, enter the **Virtual network name**: "**Studentxx_VNET**".   
-    - Replace "**xx**" with your assigned student number.
-- Confirm the **Region** is **(US) West US 3**
+- 3. Under the **Basics** tab, the **Subscription** and **Resource Groups** should already be filled in with your assigned info.  If not, see the screen shot below for details.
+- Under **Instance details**, enter the following:
+    - **Region**: "**West US 3**"
+    - **Name**: "**Studentxx_RT**" (Replace xx with your assigned student number)
+    - **Propagate gateway routes**:  "**No**"
 - Select **Next**.
-![](../Images/Azure-creating-vnet-2.PNG)
+![](../Images/4-2-Azure-deploy-rt-2.PNG)
 
+- 4. On the **Tags** tab, click **Next**.  Nothing to enter here.
 
-- On the **Security** tab, make sure none of the services are selected and click **Next**.
-Feel free to read through the available services that can be enabled.
+- 5. On the "Review + create** tab, confirm your entries under **Basics** and then select **create**.
+![](../Images/4-2-Azure-deploy-rt-3.PNG)
 
+- 6. The screen should refresh and you will see **Deployment is in progress**.
 
-- On the **IP address** tab, edit the default address space to "**192.168.1.0/24**".
-- Select the edit button (Red) next to the "default" subnet and, in the new window to the right, update the following info:  
-    - **Name**:  "**External_Subnet**"
-    - **Starting address**:  "**192.168.1.0**"
-    - **Size**: "**/27**"
-- Select **Save** 
-![](../Images/Azure-creating-vnet-3.PNG)
+- 7. After a few minutes, you will see **Your deployment is complete**.  Select **Go to resource**.  You will be directed to the **Studentxx_RT** Overview page.
+![](../Images/4-2-Azure-deploy-rt-4.PNG)
 
-- Select **+ Add a subnet** (see red below), and add the following info:
-    - **Name**:  "**Internal_Subnet**"
-    - **Starting address**:  "**192.168.1.32**"
-    - **Size**:  "**/27**"
-    - Select **Add**
-![](../Images/Azure-creating-vnet-4.PNG)
+- 8. Take a few moments and familiarize yourselft with the route table **Overview** page.  
 
+**In the next few steps, you will be creating a UDR**
+- 9. From the **Studentxx_RT** **Overview** page, navigate to **Settings** and then **Routes**.
+From the **Routes** page, select **+ Add**.
+![](../Images/4-2-Azure-deploy-rt-5.PNG)
 
-- Continue to **+ Add a subnet** for "**Protected-A_Subnet**" and "**Protected-B_Subnet**" with their respective subnets.  See the diagram below for **IP address range** assignments.  Select **Next**.
-![](../Images/Azure-creating-vnet-5.PNG)
+- 10. The **Add route** will display on the right.  Enter the following:
+    - **Route name**:  "**Default**"
+    - **Destination type**:  "**IP Address**"
+    - **Destination IP address/CIDR ranges**:  "**0.0.0.0/0**"
+    - **Next hop type**: "**Virtual appliance**"
+    - **Next hop address**:  "**192.168.1.36**"  (Confirm this is the same IP assigned to **port2** on your FortiGate NVA).
+- Select **Add**
+![](../Images/4-2-Azure-deploy-rt-6.PNG)
 
+- 11. You will see the new route called **Default** listed under the **Routes** section.
+![](../Images/4-2-Azure-deploy-rt-7.PNG)
 
-- on the **Tags** tab, select **Next**.  Nothing to enter here.
+- 12. Continue to add two more routes for **Protected-A-Subnet** and **Protected-B-Subnet**.
+![](../Images/4-2-Azure-deploy-rt-11.PNG)
 
-- On the "Review + create** tab, confirm the template summary and select **create**.
-![](../Images/Azure-creating-vnet-6.PNG)
+- 13. When finished, the **Routes** page should have the three routes listed.  See the following diagram for confirmation.
+![](../Images/4-2-Azure-deploy-rt-12.PNG)
 
-- When the deployment is complete, you will get a **Your deployement is complete** notice.
-    - Confirm your deployment has completed and under **Resource group** select the "**studentxx-azure102-rg**" link.  See red section below.
-![](../Images/Azure-creating-vnet-7.PNG)
+- 14. On the left hand side, select **Subnets** and **+ Associate**.  The **Associate subnet** page will display on the right.  Enter the following:
+    - **Virtual network**:  "**Studentxx_VNET**"  (Replace xx with your assign student number)
+    - **Subnet**: "**Protected-A_Subnet**"
+- Select **OK**.
+![](../Images/4-2-Azure-deploy-rt-8.PNG)
 
-- Your screen should return you to your respective resource group with the new virtual network listed.  Feel free to click on the new virtual network and look around.
-![](../Images/Azure-creating-vnet-8.PNG)
+- 15.  Click **+ Associate** again and add the **Protected-B_Subnet**.  You should have both subnets listed under the **Subnets** tab.
+![](../Images/4-2-Azure-deploy-rt-9.PNG)
 
+- 16. Return to the **Overview** page to see a summary of the **Routes** and associated **Subnets**.
+![](../Images/4-2-Azure-deploy-rt-10.PNG)
 
-- You have just created an **Azure virtual network (VNET)**.  The diagram below is a visual representation of your new VNET.
-![](../Images/Azure-VNET-Basic.PNG)
-
-- Continue to **Task 2 - Creating a Linux VM**.
-
-
-
+**Continue to Chapter Four - Task Three: Confirm Linux VMs access via FortiGate**

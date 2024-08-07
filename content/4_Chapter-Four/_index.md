@@ -12,9 +12,8 @@ In Task four, five, and six, you will confirm Linux VM traffic through the Forti
 
 ## Tasks to complete
 - Task 1:  Deploy a FortiGate NVA
-- Task 2:  Deploy a Route Table
-- Task 3:  Create a UDR
-- Task 4:  Confirm Linux VMs access via FortiGate
-- Task 5:  Configure FortiGate Policy
-- Task 6:  Confirm Managed Traffic
+- Task 2:  Deploy a Route Table and Create a UDR
+- Task 3:  Confirm Linux VMs access via FortiGate
+- Task 4:  Configure FortiGate Policies
+- Task 5:  Confirm Managed Traffic
 

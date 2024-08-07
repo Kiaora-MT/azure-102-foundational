@@ -8,19 +8,20 @@ weight: 1
 
 
 Our first step is going to be the creation of a new VNET (Virtual Network) in the training Resource Group that you have been assigned.
-- **Creation Steps**
-    - 1. Navigate into your Resource Group and click on the **+ Create** located at the top left of the tool bar.
+
+
+- 1. Navigate into your Resource Group and click on the **+ Create** located at the top left of the tool bar.
 ![](../Images/Azure-creating-vnet.PNG)  
 
 You will be redirected to the Azure Marketplace.
 
-In the Marketplace search bar, enter **Virtual Network** and then enter.  Navigate to the **Virtual Network** offering from Microsoft and select **Create** and **Virtual network**.
+- 2. In the Marketplace search bar, enter **Virtual Network** and then enter.  Navigate to the **Virtual Network** offering from Microsoft and select **Create** and **Virtual network**.
 ![](../Images/Azure-creating-vnet-1.PNG)
 
 
 You will be redirected to the **Create virtual network** template.
 
-- Under the **Basics** tab, the **Subscription** and **Resource Groups** should already be filled in with your assigned info.  If not, see the screen shot below for details.
+- 3. Under the **Basics** tab, the **Subscription** and **Resource Groups** should already be filled in with your assigned info.  If not, see the screen shot below for details.
 - Under **Instance details**, enter the **Virtual network name**: "**Studentxx_VNET**".   
     - Replace "**xx**" with your assigned student number.
 - Confirm the **Region** is **(US) West US 3**
@@ -28,11 +29,11 @@ You will be redirected to the **Create virtual network** template.
 ![](../Images/Azure-creating-vnet-2.PNG)
 
 
-- On the **Security** tab, make sure none of the services are selected and click **Next**.
+- 4. On the **Security** tab, make sure none of the services are selected and click **Next**.
 Feel free to read through the available services that can be enabled.
 
 
-- On the **IP address** tab, edit the default address space to "**192.168.1.0/24**".
+- 5. On the **IP address** tab, edit the default address space to "**192.168.1.0/24**".
 - Select the edit button (Red) next to the "default" subnet and, in the new window to the right, update the following info:  
     - **Name**:  "**External_Subnet**"
     - **Starting address**:  "**192.168.1.0**"
@@ -48,27 +49,27 @@ Feel free to read through the available services that can be enabled.
 ![](../Images/Azure-creating-vnet-4.PNG)
 
 
-- Continue to **+ Add a subnet** for "**Protected-A_Subnet**" and "**Protected-B_Subnet**" with their respective subnets.  See the diagram below for **IP address range** assignments.  Select **Next**.
+- 6. Continue to **+ Add a subnet** for "**Protected-A_Subnet**" and "**Protected-B_Subnet**" with their respective subnets.  See the diagram below for **IP address range** assignments.  Select **Next**.
 ![](../Images/Azure-creating-vnet-5.PNG)
 
 
-- on the **Tags** tab, select **Next**.  Nothing to enter here.
+- 7. On the **Tags** tab, select **Next**.  Nothing to enter here.
 
-- On the "Review + create** tab, confirm the template summary and select **create**.
+- 8. On the "Review + create** tab, confirm the template summary and select **create**.
 ![](../Images/Azure-creating-vnet-6.PNG)
 
-- When the deployment is complete, you will get a **Your deployement is complete** notice.
+- 9. When the deployment is complete, you will get a **Your deployement is complete** notice.
     - Confirm your deployment has completed and under **Resource group** select the "**studentxx-azure102-rg**" link.  See red section below.
 ![](../Images/Azure-creating-vnet-7.PNG)
 
-- Your screen should return you to your respective resource group with the new virtual network listed.  Feel free to click on the new virtual network and look around.
+- 10. Your screen should return you to your respective resource group with the new virtual network listed.  Feel free to click on the new virtual network and look around.
 ![](../Images/Azure-creating-vnet-8.PNG)
 
 
-- You have just created an **Azure virtual network (VNET)**.  The diagram below is a visual representation of your new VNET.
+- 11. You have just created an **Azure virtual network (VNET)**.  The diagram below is a visual representation of your new VNET.
 ![](../Images/Azure-VNET-Basic.PNG)
 
-- Continue to **Task 2 - Creating a Linux VM**.
+**Continue to **Task 2 - Creating a Linux VM**.**
 
 
 
