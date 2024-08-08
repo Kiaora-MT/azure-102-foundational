@@ -95,4 +95,4 @@ Click **OK** and confirm the new policy is displayed.
 - 11. When you are finished adding all the policies for both Linux-VMs, your **Firewall Policy** page should look similar to the following:
 ![](../Images/4-4-Azure-fgt-policy-12.PNG)
  
- - 12. 
+**Continue to Chapter Four - Task Five: Confirm Managed Traffic**

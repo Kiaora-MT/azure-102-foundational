@@ -1,5 +1,5 @@
 ---
-title: "Task 3 - Identify VM Info and Open Services"
+title: "Task 3 - Identify VM Info and Unsecured Services"
 weight: 3
 ---
 
@@ -7,7 +7,7 @@ weight: 3
 
 
 
-Now that you have created the virtual machines, **Linux-A-VM** and **Linux-B-VM**, you are going to identify their assigned private and public IP (PIP) addresses, confirm which ports are open on each VM and what access is available to and from their assigned subnets.
+Now that you have created the virtual machines, **Linux-A-VM** and **Linux-B-VM**, you are going to identify their assigned private and public IP (PIP) addresses, confirm which ports are open on each VM, and what access is available to and from their assigned subnets.
 
 In the following steps 1-6, you will learn how to navigate and identify IP information for both VMs and login to each VM via the console.
 
@@ -39,13 +39,13 @@ You will be redirected to the **Linux-B-VM | Serial Console** screen.
 - 6. Login to the **Linux-B-VM** console using the credentials you used when creating **Linux-B-VM**.
 
 
-<ins>The security policy for company ABC is as follows:</ins>
-- **Linux-A-VM** will be the management server.  Per company ABC security policy, it should only have SSH and PING access to **Linux-B-VM** and port 80 access to the Internet.  There should also be SSH access to **Linux-A-VM** from the Internet.
+<ins>The VNET security policy for company ABC is as follows:</ins>
+- **Linux-A-VM** will be the management server.  Per company ABC security policy, it should only have SSH and PING access to **Linux-B-VM** and HTTP/HTTPS access to the Internet.  There should also be SSH access to **Linux-A-VM** from the Internet.
 
-- **Linux-B-VM** is the www server.  Only port 80 services from the Internet should be allowed.  It will also have 80 and 443 access to the Internet and only PING access to **Linux-A-VM**.
+- **Linux-B-VM** is the www server.  Only HTTP services from the Internet should be allowed.  It will also have HTTP and HTTPS access to the Internet and only PING access to **Linux-A-VM**.
 
-The goals of the following steps seven and eight, are to note what service ports are open and listening on each VM, what access does each VM have accross subnets, and what access to and from the Internet each VM has exposed and access to.  
-With this information, we can implement company ABC's security policies when securing the VNET in the next module - **Securing the VNET**.  
+The goals of the following steps seven and eight, are to note what service ports are open and listening on each VM, what access does each VM have accross subnets, and what services to and from the Internet each VM has exposed and access to.  
+With this information, we can implement company ABC's VNET security policies when securing the VNET in **Chapter Four: Securing the VNET**.  
 
 
 **Make sure to configure **Linux-B-VM** first - Step seven**
@@ -62,10 +62,11 @@ With this information, we can implement company ABC's security policies when sec
         - Ping the private IP of **Linux-A-VM** and confirm replies.  (See step two above for IP)
         - Install **NMAP**:  "**sudo apt install nmap**" and select "**Y**"
         - Scan open ports on **Linux-A-VM**:  "**nmap -F 192.168.1.xxx**"  (See step two above for IP)
-        Note the open port(s) on **Linux-A-VM**.
-        - Confirm SSH access to **Linux-A-VM** and login:  **ssh studentxx@192.168.1.xxx**"
-                - Run "**sudo ss -ltn**" to confirm the same open ports that NMAP reported.
-                - Type **exit** to disconnect from **Linux-A-VM**.
+        Note the open port(s) on **Linux-A-VM**
+     - Confirm SSH access to **Linux-A-VM**:
+         - Login via SSH:  **ssh studentxx@192.168.1.xxx**"
+         - Run "**sudo ss -ltn**" to confirm the same open ports that NMAP reported
+         - Type **exit** to disconnect from **Linux-A-VM**
 
 - 8. From the **Linux-A-VM** CLI:
         - Ping "**www.yahoo.com**" and confirm replies.  (CTRL+c to stop ping)
@@ -79,17 +80,18 @@ With this information, we can implement company ABC's security policies when sec
         - Install **NMAP**:  "**sudo snap install nmap**"
         - Scan open ports on **Linux-B-VM**:  "**nmap -F 192.168.1.xxx**"  (Note step five above for IP)
         Note the open port(s) on **Linux-B-VM**.
-        - Confirm SSH access to **Linux-B-VM** and login:  **ssh studentxx@192.168.1.xxx**"
-                - Run "**sudo ss -ltn**" to confirm the same open ports that NMAP reported.
-                - Type **exit** to disconnect from **Linux-B-VM**.
+     - Confirm SSH access to **Linux-B-VM**:
+         - Login via SSH:  **ssh studentxx@192.168.1.xxx**"
+         - Run "**sudo ss -ltn**" to confirm the same open ports that NMAP reported.
+         - Type **exit** to disconnect from **Linux-B-VM**.
 
 The following diagram is a visual representation of your current VNET and VM deployment.
 ![](../Images/Azure-Unsecured-VNET1.PNG)
 
 
-What do steps seven and eight, above, tell you about access to/from the Internet to both Linux VMs?  Does this match company ABC's security policy?
+What do steps seven and eight, above, tell you about access to/from the Internet to both Linux VMs?  Does this match company ABC's VNET security policy?
 
 
-What do steps seven and eight, above, tell you about access between each Linux VM in different subnets?  Does this match company ABC's security policy?
+What do steps seven and eight, above, tell you about access between each Linux VM in different subnets?  Does this match company ABC's VNET security policy?
 
-**Continue to Chapter 4: Deploy FortiGate NVA**
+**Continue to Chapter 4: Securing the VNET**

@@ -7,68 +7,45 @@ weight: 4
 
 
 
-Our first step is going to be the creation of a new VNET (Virtual Network) in the training Resource Group that you have been assigned.
-- **Creation Steps**
-    - 1. Navigate into your Resource Group and click on the **+ Create** located at the top left of the tool bar.
-![](../Images/Azure-creating-vnet.PNG)  
+In Task five, you will confirm that the **Firewall Policies** are correct and accomplish the security requrements for Company ABC.  In the following steps, you will run the same cli commands on each Linux VM to confirm which services are reachable and blocked.
 
-You will be redirected to the Azure Marketplace.
+**Summary of access to/from each Linux VM:**
 
-In the Marketplace search bar, enter **Virtual Network** and then enter.  Navigate to the **Virtual Network** offering from Microsoft and select **Create** and **Virtual network**.
-![](../Images/Azure-creating-vnet-1.PNG)
+**Linux-A-VM** is the management server and should have the following access:
+- SSH and PING access to **Linux-B-VM**
+- HTTP and HTTPS access to the Internet
+- SSH access to **Linux-A-VM** from the Internet
 
-
-You will be redirected to the **Create virtual network** template.
-
-- Under the **Basics** tab, the **Subscription** and **Resource Groups** should already be filled in with your assigned info.  If not, see the screen shot below for details.
-- Under **Instance details**, enter the **Virtual network name**: "**Studentxx_VNET**".   
-    - Replace "**xx**" with your assigned student number.
-- Confirm the **Region** is **(US) West US 3**
-- Select **Next**.
-![](../Images/Azure-creating-vnet-2.PNG)
-
-
-- On the **Security** tab, make sure none of the services are selected and click **Next**.
-Feel free to read through the available services that can be enabled.
+- 1. From the **Linux-A-VM** CLI:
+        - Ping the private IP of **Linux-B-VM** and confirm replies. 
+        - Confirm SSH access to **Linux-B-VM** and login:  **ssh studentxx@192.168.1.xxx**"
+            - Type **exit** to disconnect from **Linux-B-VM**.
+        - Confirm port 80 access to the Internet:  "**wget www.fortinet.com**"
+        - Confirm port 443 access to the Internet and the public IP assigned to **Linux-A-VM**: "**curl https://ipinfo.io/ip**"  (Confirm against what the Azure portal has listed  as the Public IP assigned to the FortiGate or confirm against the IP you used to login to the FortiGate GUI.
+        - From your client of choice, SSH from the Internet to the VIP assigned to **Linux-A-VM**.  If you do not have a SSH client installed, use the following website and scan for the SSH service - https://dnschecker.org/port-scanner.php.  Select **Port Type**:  "**Server Ports**".
+    
+Why is HTTPS showing up on the scan results?
 
 
-- On the **IP address** tab, edit the default address space to "**192.168.1.0/24**".
-- Select the edit button (Red) next to the "default" subnet and, in the new window to the right, update the following info:  
-    - **Name**:  "**External_Subnet**"
-    - **Starting address**:  "**192.168.1.0**"
-    - **Size**: "**/27**"
-- Select **Save** 
-![](../Images/Azure-creating-vnet-3.PNG)
+**Linux-B-VM** is the www server and should have the following access:
+- HTTP and HTTPS access to the Internet
+- PING access to **Linux-A-VM**
+- HTTP service available from the Internet
 
-- Select **+ Add a subnet** (see red below), and add the following info:
-    - **Name**:  "**Internal_Subnet**"
-    - **Starting address**:  "**192.168.1.32**"
-    - **Size**:  "**/27**"
-    - Select **Add**
-![](../Images/Azure-creating-vnet-4.PNG)
+- 2. From the **Linux-B-VM** CLI:
+        - Confirm port 80 access to the Internet:  "**wget www.fortinet.com**"
+        - Confirm port 443 access to the Internet and the public IP assigned to **Linux-A-VM**: "**curl https://ipinfo.io/ip**"  (Confirm against what the Azure portal has listed  as the Public IP assigned to the FortiGate or confirm against the IP you used to login to the FortiGate GUI.)
+        - Ping the private IP of **Linux-A-VM** and confirm replies.
+        - From your local browser, open a tab and enter "**http://x.x.x.x**"  (x.x.x.x is the VIP of **Linux-B-VM**)  Confirm you get an NGINX welcome screen.
+        
+Congrats if you confirmed access on all the requirements above on the first check.
 
+If time permits try enabling other ports on the Linux VMs and allowing access via the FortiGate.
+Also, spend some time looking around the FortiGate NVA and see if you notice a difference between what options are available compared to a FortiGate hardware GUI.
 
-- Continue to **+ Add a subnet** for "**Protected-A_Subnet**" and "**Protected-B_Subnet**" with their respective subnets.  See the diagram below for **IP address range** assignments.  Select **Next**.
-![](../Images/Azure-creating-vnet-5.PNG)
+Thanks for attending this course!.
 
-
-- on the **Tags** tab, select **Next**.  Nothing to enter here.
-
-- On the "Review + create** tab, confirm the template summary and select **create**.
-![](../Images/Azure-creating-vnet-6.PNG)
-
-- When the deployment is complete, you will get a **Your deployement is complete** notice.
-    - Confirm your deployment has completed and under **Resource group** select the "**studentxx-azure102-rg**" link.  See red section below.
-![](../Images/Azure-creating-vnet-7.PNG)
-
-- Your screen should return you to your respective resource group with the new virtual network listed.  Feel free to click on the new virtual network and look around.
-![](../Images/Azure-creating-vnet-8.PNG)
-
-
-- You have just created an **Azure virtual network (VNET)**.  The diagram below is a visual representation of your new VNET.
-![](../Images/Azure-VNET-Basic.PNG)
-
-- Continue to **Task 2 - Creating a Linux VM**.
+**END OF COURSE**
 
 
 

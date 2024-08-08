@@ -33,5 +33,8 @@ Did you get a response from either?  Why not?
 Do you see the traffic being reported in the ForiGate console?
 Is the traffic from both Linux VMs being routed to the FortiGate via port2?
 
+- 6. The diagram below is a visual representation of your VNET with the Linux VMs traffic flow via the FortiGate NVA.
+![](../Images/4-3-Azure-access-fgt-1.PNG)
+
 **Continue to Chapter Four - Task Four: Configure FortiGate Polices**
 

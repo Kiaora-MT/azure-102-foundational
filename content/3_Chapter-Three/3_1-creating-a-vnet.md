@@ -7,7 +7,7 @@ weight: 1
 
 
 
-Our first step is going to be the creation of a new VNET (Virtual Network) in the training Resource Group that you have been assigned.
+In task one, you will deploy VNET (Virtual Network) in the training **Resource Group** that you have been assigned to.
 
 
 - 1. Navigate into your Resource Group and click on the **+ Create** located at the top left of the tool bar.
@@ -22,16 +22,16 @@ You will be redirected to the Azure Marketplace.
 You will be redirected to the **Create virtual network** template.
 
 - 3. Under the **Basics** tab, the **Subscription** and **Resource Groups** should already be filled in with your assigned info.  If not, see the screen shot below for details.
-- Under **Instance details**, enter the **Virtual network name**: "**Studentxx_VNET**".   
-    - Replace "**xx**" with your assigned student number.
-- Confirm the **Region** is **(US) West US 3**
-- Select **Next**.
+    - Under **Instance details**, enter the following:
+        - **Virtual network name**: "**Studentxx_VNET**" (Replace "**xx**" with your assigned student number)
+        - **Region**: "**(US) West US 3**"
+
+    - Select **Next**.
 ![](../Images/Azure-creating-vnet-2.PNG)
 
 
 - 4. On the **Security** tab, make sure none of the services are selected and click **Next**.
 Feel free to read through the available services that can be enabled.
-
 
 - 5. On the **IP address** tab, edit the default address space to "**192.168.1.0/24**".
 - Select the edit button (Red) next to the "default" subnet and, in the new window to the right, update the following info:  
@@ -69,7 +69,7 @@ Feel free to read through the available services that can be enabled.
 - 11. You have just created an **Azure virtual network (VNET)**.  The diagram below is a visual representation of your new VNET.
 ![](../Images/Azure-VNET-Basic.PNG)
 
-**Continue to **Task 2 - Creating a Linux VM**.**
+**Continue to **Task 2 - Create Linux Virtual Machines (VMs)**.**
 
 
 
