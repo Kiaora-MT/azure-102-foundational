@@ -1,10 +1,8 @@
 ---
-title: "Chapter 1: Securing Azure Virtual Networks with FortiGate NVAs"
+title: "Chapter 1: Learning Objectives"
 weight: 5
 ---
 
-
-## Learning Objectives
 
 Upon completion of this workshop, you will gain understanding, create, and deploy the following:
   * Azure Services
@@ -34,7 +32,7 @@ Fortinet & Azure compute and components used during this workshop:
 
   * We will deploy and configure the following two architectures:
     - **Single VNET without a FortiGate NVA - Unsecured VNET**
-    ![](Images/Azure-Unsecured-VNET.png)
+![](Images/Azure-Unsecured-VNET1.PNG)
 
 
     - **Single VNET with a FortiGate NVA - Secured VNET**
