@@ -12,9 +12,11 @@ In this course you will learn how to deploy a FortiGate NGFW and secure an Azure
 ## Course Goals
 - Learn key Azure services and terms
 - Deploy and configure a Virtual Network (VNET)
-- Deploying server VMs in a VNET
-- Deploying and configuring a FortiGate network virtual appliance (NVA)
-- Deploying a route table and creating User Define Routes (UDR)
-- Securing the VNET and hosted services utilizing FortiGate polices
+- Deploy server VMs in a VNET
+- Deploy and configure a FortiGate network virtual appliance (NVA)
+- Deploy a route table and create User Define Routes (UDR)
+- Secure the VNET and hosted services utilizing FortiGate polices
 
 ![](Images/Azure-Secured-VNET.PNG)
+
+**Continue to Chapter 1: Learning Objectives**

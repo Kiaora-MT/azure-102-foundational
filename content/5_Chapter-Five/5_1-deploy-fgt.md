@@ -91,4 +91,4 @@ Note the private IP address for both **port1** and **port2**.  You will need thi
 - 18. You have just deployed a **FortiGate NVA**.  The diagram below is a visual representation of your VNET with the Linux VMs and FortiGate NVA.
 ![](../Images/4-1-Azure-deploy-fgt-18.PNG)
 
-**Continue to Chapter Four - Task Two: Deploy a Route Table and Create a UDR**
+**Continue to Chapter 5 - Task 2: Deploy a Route Table and Create a UDR**

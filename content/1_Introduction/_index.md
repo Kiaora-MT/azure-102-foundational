@@ -30,10 +30,12 @@ Fortinet & Azure compute and components used during this workshop:
 
   * Azure networking offers multiple ways to organize your Azure architecture to take advantage of FortiGate traffic inspection.  Most importantly, traffic must follow a symmetrical routing path (for forward and reverse flows). As long as flows are symmetrical, the architecture will work and traffic will flow through a FortiGate NGFW for inspection.
 
-  * We will deploy and configure the following two architectures:
+  * You will deploy and configure the following two architectures:
     - **Single VNET without a FortiGate NVA - Unsecured VNET**
 ![](Images/Azure-Unsecured-VNET1.PNG)
 
 
     - **Single VNET with a FortiGate NVA - Secured VNET**
 ![](Images/Azure-Secured-VNET.PNG)
+
+**Continue to Chapter 2: Azure Fundamentals**
